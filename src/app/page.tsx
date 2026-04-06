@@ -24,7 +24,7 @@ export default function Home() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // سنحصل على هذا المفتاح لاحقاً
+      access_key: "cfb1f454-a11a-46b9-a6fc-ccb53cef8c8f", // مفتاح ارسال الايميل
       name: formData.get("name"),
       company: formData.get("company"),
       industry: formData.get("industry"),
