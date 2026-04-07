@@ -24,7 +24,6 @@ export default function Home() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      access_key: "cfb1f454-a11a-46b9-a6fc-ccb53cef8c8f", // مفتاح ارسال الايميل
       name: formData.get("name"),
       company: formData.get("company"),
       industry: formData.get("industry"),
@@ -33,7 +32,7 @@ export default function Home() {
     };
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://formspree.io/f/xpqobqpk", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
