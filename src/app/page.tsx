@@ -44,11 +44,14 @@ export default function Home() {
         return { ok: false };
       });
 
-      // نعرض النجاح ليتمكن المستخدم من تجربة الواجهة حتى لو كان المفتاح غير صالح بعد
-      setIsSubmitted(true);
+      if (response && response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("عذراً، حدث خطأ في الإرسال. يرجى التأكد من عدم وجود إضافة تمنع الإعلانات (AdBlocker) تعيق الإرسال.");
+      }
     } catch (error) {
       console.log(error);
-      setIsSubmitted(true);
+      alert("عذراً، حدث خطأ في الاتصال بالخادم.");
     } finally {
       setIsSubmitting(false);
     }
