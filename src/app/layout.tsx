@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
-import { Cairo, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Cairo } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -8,14 +20,14 @@ const cairo = Cairo({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "IntelliBot AI | AI Automation for Smarter Businesses",
-  description: "وكالة ذكاء اصطناعي رائدة تقدم حلول الأتمتة للشركات والعيادات والمتاجر.",
+  title: "IntelliBot | Technology & Digital Transformation Agency",
+  description: "وكالة تكنولوجية متكاملة تقدم حلول الأتمتة والتطبيقات الرقمية المخصصة للشركات.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,11 +39,12 @@ export default function RootLayout({
     <html
       lang="ar"
       dir="rtl"
-      className={`${cairo.variable} ${inter.variable} h-full antialiased dark`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${cairo.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-cairo">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {children}
       </body>
     </html>
   );
 }
+
