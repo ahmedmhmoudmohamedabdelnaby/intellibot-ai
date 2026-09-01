@@ -22,7 +22,7 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: "IntelliBot | Technology & Digital Transformation Agency",
-  description: "وكالة تكنولوجية متكاملة تقدم حلول الأتمتة والتطبيقات الرقمية المخصصة للشركات.",
+  description: "Full-service technology agency delivering automation, custom software, and AI solutions for businesses.",
   icons: {
     icon: "/icon.png",
     shortcut: "/favicon.ico",
@@ -37,8 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="ar"
-      dir="rtl"
+      lang="en"
+      dir="ltr"
       className={`${spaceGrotesk.variable} ${inter.variable} ${cairo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">

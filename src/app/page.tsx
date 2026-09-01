@@ -5,7 +5,7 @@ import { Bot, Zap, Clock, ShieldCheck, LineChart, Phone, Globe, DollarSign, Targ
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  const [lang, setLang] = useState<"ar" | "en">("ar");
+  const [lang, setLang] = useState<"ar" | "en">("en");
   const [mounted, setMounted] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,7 +28,7 @@ export default function Home() {
       company: formData.get("company"),
       industry: formData.get("industry"),
       phone: formData.get("phone"),
-      subject: "طلب جديد لخدمات الأتمتة (IntelliBot)"
+      subject: "New Service Request (IntelliBot)"
     };
 
     try {
@@ -47,11 +47,11 @@ export default function Home() {
       if (response && response.ok) {
         setIsSubmitted(true);
       } else {
-        alert("عذراً، حدث خطأ في الإرسال. يرجى التأكد من عدم وجود إضافة تمنع الإعلانات (AdBlocker) تعيق الإرسال.");
+        alert(lang === "ar" ? "عذراً، حدث خطأ في الإرسال. يرجى التأكد من عدم وجود إضافة تمنع الإعلانات (AdBlocker) تعيق الإرسال." : "Sorry, an error occurred while sending. Please disable any AdBlocker and try again.");
       }
     } catch (error) {
       console.log(error);
-      alert("عذراً، حدث خطأ في الاتصال بالخادم.");
+      alert(lang === "ar" ? "عذراً، حدث خطأ في الاتصال بالخادم." : "Sorry, connection error.");
     } finally {
       setIsSubmitting(false);
     }
